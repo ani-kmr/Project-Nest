@@ -1,0 +1,155 @@
+/* General Container Styling */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Logo Styling */
+.logo {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card Component */
+.card {
+  padding: 2em;
+}
+
+/* Documentation Links */
+.read-the-docs {
+  color: #888;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+
+.navbar a:hover {
+  color: #646cff; /* Change link color on hover */
+}
+
+/* Dropdown Container Styling */
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  min-width: 250px; /* Ensure enough width for long text */
+  z-index: 20;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowed text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap; /* Ensure no wrapping inside each item */
+}
+
+.dropdown a:hover {
+  background-color: #f4f4f4;
+  color: #646cff;
+}
+
+/* Show dropdown on hover */
+.relative:hover .dropdown {
+  display: block;
+}
+
+/* Dark Mode Adjustments */
+body.dark .navbar {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+body.dark .navbar a {
+  color: #e2e8f0;
+}
+
+body.dark .navbar a:hover {
+  color: #90cdf4;
+}
+
+body.dark .dropdown {
+  background-color: #2d3748;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .dropdown a {
+  color: #e2e8f0;
+}
+
+body.dark .dropdown a:hover {
+  background-color: #4a5568;
+  color: #90cdf4;
+}
+
+/* Additional Styling for Navbar Links */
+.navbar a.relative {
+  position: relative;
+  padding-right: 2rem; /* Add space for dropdown icon */
+}
+
+.navbar a.relative::after {
+  content: '▼';
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: #333;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar a.relative:hover::after {
+  transform: translateY(-50%) rotate(180deg); /* Rotate the dropdown icon on hover */
+}
